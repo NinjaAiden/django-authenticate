@@ -122,3 +122,5 @@ STATIC_URL = '/static/'
 
 # neccessary to show django messages
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
