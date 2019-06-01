@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 
-from accounts.forms import UserLoginForm
+from accounts.forms import UserLoginForm, UserRegistrationForm
 
 def index(request):
     """ Return index html file """
@@ -41,4 +41,6 @@ def login(request):
 
 def registration(request):
     """ Render registration page """
-    return render(request, 'registration.html')
+    registration_form = UserRegistrationForm()
+    return render(request, 'registration.html', {
+        "registration_form": registration_form})
