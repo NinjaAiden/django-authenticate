@@ -1,5 +1,4 @@
 """django_auth URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
 Examples:
@@ -13,17 +12,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-
-# import functions from app for rendering urls
-from accounts.views import index, logout, login, registration, user_profile
+from accounts.views import index
+from accounts import urls as accounts_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
-    url(r'^accounts/logout/$', logout, name="logout"),
-    url(r'^accounts/login/$', login, name="login"),
-    url(r'^accounts/registration/$', registration, name="registration"),
-    url(r'^accounts/profile/$', user_profile, name="user_profile")
+    url(r'^accounts/', include(accounts_urls))
 ]
