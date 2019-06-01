@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Django Auth</title>
-</head>
+<!-- block for title -->
 
-<body>
-    <h1>Home</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="{% url 'login' %}">Login</a>
-            </li>
-            <li>
-                <a href="{% url 'logout' %}">Logout</a>
-            </li>
-            <li>
-                <a href="#">Register</a>
-            </li>
-            <li>
-                <a href="#">Profile</a>
-            </li>
-        </ul>
-    </nav>
-    <hr> {% if messages %}
-    <div>
-        {% for message in messages %} 
-            {{ message }} 
-        {% endfor %}
-    </div>
-    {% endif %}
-</body>
+{% block page_title %} Login Page {% endblock %}
 
-</html>
+<!-- block for heading -->
+
+{% block page_heading %} User Login {% endblock %}
+
+<!-- main content block -->
+
+{% block content %}
+
+{% endblock %}
